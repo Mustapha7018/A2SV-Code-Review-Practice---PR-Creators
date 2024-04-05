@@ -46,10 +46,22 @@ class Task {
 
 class TaskManager {
   // Add task method
-  void addTask() {}
+  List<Task> tasks= [];
+
+  void addTask(int id,String name, String description,DateTime dueDate){
+    Task newTask = new Task(id,name,description,dueDate);
+    tasks.add(newTask);
+    
+    print("${name} Added");
+  }
+  
 
   // View all tasks
-  void viewAllTask() {}
+  void viewAllTask() {
+    for(int i=0;i<tasks.length;i++){
+      print(tasks[i]);
+    }
+  }
 
   // View all completed tasks
   void viewCompletedTasks() {}
@@ -64,4 +76,10 @@ class TaskManager {
   void deleteTask() {}
 }
 
-void main() {}
+void main() {
+  TaskManager taskManager = new TaskManager();
+  taskManager.addTask(1,"Task 1", "Description 1", DateTime.now());
+  taskManager.addTask(2,"Task 2", "Description 2", DateTime.now());
+  taskManager.addTask(3,"Task 3", "Description 3", DateTime.now());
+  taskManager.viewAllTask();
+}
