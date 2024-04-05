@@ -62,7 +62,11 @@ class TaskManager {
   
 
   // View all tasks
-  void viewAllTask() {}
+  void viewAllTask() {
+      for(int i=0;i<tasks.length;i++){
+      print(tasks[i]);
+    }
+  }
 
   // View all completed tasks
   void viewCompletedTasks() {
@@ -78,7 +82,11 @@ class TaskManager {
   }
 
   // View all pending tasks
-  void viewPendingTasks() {}
+  void viewPendingTasks() {
+      for(int i=0;i<tasks.length;i++){
+      print(tasks[i]);
+    }
+  }
 
   // Edit task method
   void editTask() {}
@@ -87,4 +95,8 @@ class TaskManager {
   void deleteTask() {}
 }
 
-void main() {}
+void main() {
+  TaskManager taskManager = new TaskManager();
+  taskManager.addTask("Task 1", "Description 1", DateTime.now());
+  taskManager.viewAllTask();
+}
