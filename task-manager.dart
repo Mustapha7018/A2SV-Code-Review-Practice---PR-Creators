@@ -61,6 +61,7 @@ class TaskManager {
     for(int i=0;i<tasks.length;i++){
       print(tasks[i]);
     }
+    
   }
 
   // View all completed tasks
