@@ -45,6 +45,9 @@ class Task {
 }
 
 class TaskManager {
+
+  List<Task> _tasks = [];
+
   // Add task method
   void addTask() {}
 
@@ -52,7 +55,17 @@ class TaskManager {
   void viewAllTask() {}
 
   // View all completed tasks
-  void viewCompletedTasks() {}
+  void viewCompletedTasks() {
+    List<Task> completedTasks = _tasks.where((task) => task.getStatus() == Status.completed).toList();
+
+    if (completedTasks.isEmpty) {
+      print("No completed tasks found.");
+    } else {
+      for (Task task in completedTasks) {
+        print(task.toString());
+      }
+    }
+  }
 
   // View all pending tasks
   void viewPendingTasks() {}
