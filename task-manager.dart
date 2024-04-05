@@ -45,11 +45,21 @@ class Task {
 }
 
 class TaskManager {
-
+  int _counter = 1;
   List<Task> _tasks = [];
 
   // Add task method
-  void addTask() {}
+  List<Task> tasks= [];
+
+  void addTask(String name, String description,DateTime dueDate){
+    Task newTask = new Task(_counter,name,description,dueDate);
+    _counter ++;
+
+    tasks.add(newTask);
+    print("${name} Added");
+    
+  }
+  
 
   // View all tasks
   void viewAllTask() {}
