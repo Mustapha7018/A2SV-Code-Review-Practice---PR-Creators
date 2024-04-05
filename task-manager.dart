@@ -83,8 +83,18 @@ class TaskManager {
 
   // View all pending tasks
   void viewPendingTasks() {
-      for(int i=0;i<tasks.length;i++){
-      print(tasks[i]);
+
+      
+
+    List<Task> pendingTasks = _tasks.where((task) => task.getStatus() == Status.pending).toList();
+
+    if (pendingTasks.isEmpty) {
+      print("No pending tasks found.");
+    } else {
+      for (Task task in pendingTasks) {
+        print(task.toString());
+      }
+
     }
   }
 
